@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+ <fieldset>
+  <legend>Sale Calculator</legend>
+ <table>
+    <td>Cost:<input onchange="totalCost()"  id=cost /></td><tr>
+    <td>Sale:<input  onchange="totalCost()"  id=sale /></td><tr>
+    <td>Savings:<input  id=savings /> </td><tr>
+    <td>Total:<input onchange="totalCost()" id=total /></td>
+    </table>
+ </fieldset>
+</form>
+
+</body>
+<script>
+    function totalCost() {
+        var cost = document.getElementById("cost").value-0;
+        var sale = document.getElementById("sale").value-0;
+        var savings = sale * cost;
+        document.getElementById("savings").value = cost * sale;
+        document.getElementById("total").value = cost - savings;
+    }
+</script>
+</html>
